@@ -62,13 +62,13 @@ public class Login {
 	}
 	
 	
-	@Then("^login page open successfuly$")
-	public void login_page_open_successfuly() {
+	@Then("^login page open successfuly as \"([^\"]*)\" tag appears$")
+	public void login_page_open_successfuly_as_tag_appears(String expectedTag) {
 		
 		WebElement signInOption=webDriver.findElement(By.xpath("//*[@id='sgnTab']/span[2]"));
-		String expectedTag= signInOption.getText();
+		String actualTag= signInOption.getText();
 
-		Assert.assertEquals(expectedTag, "SignIn");
+		Assert.assertEquals(actualTag, expectedTag);
 		
 	   
 	}
