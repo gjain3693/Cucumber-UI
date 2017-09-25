@@ -21,7 +21,7 @@ import cucumber.api.java.en.When;
  *
  */
 
-public class Login {
+public class _1LoginPage {
 	
 	
 	String webDriverKey;

@@ -13,7 +13,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"classpath:features/Login.feature"},glue = {"web"},format = {"pretty"})
+@CucumberOptions(features = {"classpath:features/_1LoginPage.feature","classpath:features/_2SingIn.feature"},glue = {"web"},format = {"pretty"})
 
 public class TestSequence {
 
