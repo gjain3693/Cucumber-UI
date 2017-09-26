@@ -2,12 +2,15 @@ package web;
 
 import java.util.concurrent.TimeUnit;
 
+import junit.framework.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.Assert;
+
+
 
 import utility.Screenshot;
 import cucumber.api.java.en.Given;
@@ -77,7 +80,7 @@ public class _1LoginPage {
 				By.xpath("//*[@id='sgnTab']/span[2]"));
 		String actualTag = signInOption.getText();
 
-		Assert.assertEquals(actualTag, expectedTag);
+		Assert.assertEquals(expectedTag, actualTag);
 		screenshot.takeScreenShot("Sign In page");
 		
 	   

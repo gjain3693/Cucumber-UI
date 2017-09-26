@@ -13,7 +13,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = {"classpath:features/_1LoginPage.feature","classpath:features/_2SingIn.feature"},glue = {"web"},format = {"pretty"})
+@CucumberOptions(features = {"src/test/resources/features/"},glue = {"web"},format = {"pretty"})
 
 public class TestSequence {
 
@@ -26,10 +26,13 @@ public class TestSequence {
 	@Before public void setDriver() {
 		
 	capabilities = DesiredCapabilities.internetExplorer();
+	capabilities.setCapability(InternetExplorerDriver
+			.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 	capabilities.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 	capabilities.setCapability(CapabilityType.BROWSER_NAME, "IE");
 	capabilities.setCapability(InternetExplorerDriver
 			.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
+	
 	capabilities.setCapability("requireWindowFocus", true);
 	capabilities.setCapability(InternetExplorerDriver.IGNORE_ZOOM_SETTING, true);
 		
