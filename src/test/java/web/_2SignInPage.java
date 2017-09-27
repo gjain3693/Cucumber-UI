@@ -69,9 +69,18 @@ public class _2SignInPage {
 
 	/**
 	 * This method will verify user logged in successfully.
+	 * @throws InterruptedException 
 	 */
+	
 	@Then("^user logged in successfully$")
-	public void user_logged_in_successfully()  {
+	public void user_logged_in_successfully() throws InterruptedException  {
+		
+		Thread.sleep(3000);
+		
+		String loginName = TestSequence.webDriver.findElement(
+				By.xpath("//*[@id='gh-ug']")).getText();
+		
+		Assert.assertEquals("Hi Gaurav!", loginName);
 
 
 	}
