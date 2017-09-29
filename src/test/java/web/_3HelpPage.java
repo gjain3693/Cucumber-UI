@@ -1,10 +1,13 @@
 package web;
 
+import java.util.List;
+
 import junit.framework.Assert;
 
 import org.openqa.selenium.By;
 
 import utility.Screenshot;
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -66,6 +69,21 @@ public class _3HelpPage  {
 		Screenshot screenShot = new Screenshot();
 		screenShot.takeScreenShot("Customer Service");
 	    
+	}
+	
+	@When("^user navigated to Customer Service page$")
+	public void user_navigated_to_Customer_Service_page()  {
+	    // Write code here that turns the phrase above into concrete actions
+	    
+	}
+
+	@Then("^user will find below catagory for help$")
+	public void user_will_find_below_catagory_for_help(DataTable helpOptions) {
+	  List<List<String>> readRecord= helpOptions.raw();
+	  for(int i=1;i<readRecord.size();i++) {
+	  System.out.println("RECORD::"+readRecord.get(i).get(0));
+	  }
+	  
 	}
 
 }
